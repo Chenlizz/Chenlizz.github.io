@@ -27,8 +27,8 @@ googleanalytics_uri: https://www.google-analytics.com/analytics.js
 
 # website property
 # footer.ejs
-website_name: 南琴浪博客
-website_uri: sometimesnaive.org
+website_name: 陈黎姿博客
+website_uri: https://chenlizz.github.io/
 
 # favicon.ico
 # head.ejs
