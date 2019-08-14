@@ -70,7 +70,7 @@
 <main class="app-body flex-box">
     <article class="post-article">
         <section class="markdown-content">
-            <h2 id="浏览器线程基础"><a href="#浏览器线程基础" class="headerlink" title="浏览器线程基础"></a>浏览器线程基础</h2><p>一个页面的呈现主要是由浏览器渲染进程实现的（render进程），主要作用为页面渲染，脚本执行，事件处理等。而render进程是多线程的，它主要包含以下主要线程：</p>
+            <h2 id="浏览器线程基础"><a href="#浏览器线程基础" class="headerlink" title="浏览器线程基础"></a>浏览器线程基础</h2><p>浏览器有主进程和渲染进程组成，其中主进程只有一个，而渲染进程可以有多个，一般一个页面一个渲染进程。。。即一个页面的呈现主要是由浏览器渲染进程实现的（render进程），主要作用为页面渲染，脚本执行，事件处理等。而render进程又是多线程的，它主要包含以下主要线程：</p>
 <ol>
 <li>GUI渲染线程<ul>
 <li>负责渲染浏览器界面，解析HTML、CSS，构建DOM树和RenderObject，布局和绘制等。</li>
