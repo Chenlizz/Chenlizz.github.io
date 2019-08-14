@@ -72,7 +72,7 @@
         <section class="markdown-content">
             <h2 id="Web-Worker"><a href="#Web-Worker" class="headerlink" title="Web Worker"></a>Web Worker</h2><p>众所周知，JavaScript 是单线程的。Web Worker 的作用，就是为 JavaScript 创造多线程环境。主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。目的是，为主线程分担一些含耗时较大的算法代码或高延迟任务。</p>
 <p>Worker 线程一旦新建成功，就会始终运行，不会被主线程上的活动（比如用户点击按钮、提交表单）打断。这样有利于随时响应主线程的通信。但是，这也造成了 Worker 比较耗费资源，不应该过度使用，而且一旦使用完毕，就应该关闭。</p>
-<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ol>
+<ol>
 <li><p>创建新的Worker</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var worker = new Worker(&apos;work.js&apos;);</span><br></pre></td></tr></table></figure>
 
@@ -154,7 +154,7 @@
     <div class="toc-main">
         <strong class="toc-title">Catalog</strong>
         
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Web-Worker"><span class="toc-nav-text">Web Worker</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#API"><span class="toc-nav-text">API</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Shared-Worker"><span class="toc-nav-text">Shared Worker</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#实现多标签页之前通信的其他方法"><span class="toc-nav-text">实现多标签页之前通信的其他方法</span></a></li></ol>
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Web-Worker"><span class="toc-nav-text">Web Worker</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Shared-Worker"><span class="toc-nav-text">Shared Worker</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#实现多标签页之前通信的其他方法"><span class="toc-nav-text">实现多标签页之前通信的其他方法</span></a></li></ol>
         
     </div>
 </aside>
