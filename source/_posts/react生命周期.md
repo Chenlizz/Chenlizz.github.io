@@ -2,6 +2,7 @@
 title: react生命周期
 date: 2019-08-05 14:22:04
 tags:
+categories: react
 ---
 
 ## react生命周期(v16.4)
@@ -35,4 +36,5 @@ tags:
    当渲染过程，生命周期，或子组件的构造函数中抛出错误时，会调用如下方法：
     - static getDerivedStateFromError()
     - componentDidCatch()
+    
 ![react生命周期](HTML5-WebWorker/react.png)
