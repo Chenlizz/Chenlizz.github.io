@@ -2,7 +2,8 @@
 title: HTML执行顺序（包含浏览器线程基础）
 date: 2019-08-03 20:33:35
 tags:
-categories: html
+categories: 
+- html
 ---
 
 ## 浏览器线程基础

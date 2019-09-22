@@ -2,7 +2,8 @@
 title: react生命周期
 date: 2019-08-05 14:22:04
 tags:
-categories: react
+categories: 
+- react
 ---
 
 ## react生命周期(v16.4)
