@@ -10,7 +10,7 @@
     
     <title>
     
-        react生命周期 | CLZ要长大
+        rem单位border-radius:50%在安卓手机中画圆变形 | CLZ要长大
     
     </title>
         <link href="/deps/css/style.css" type="text/css" rel="stylesheet">
@@ -64,53 +64,16 @@
     </div>
 </header>
         <div id="article-banner">
-    <h2>react生命周期</h2>
-    <p class="post-date">08/05/2019</p>
+    <h2>rem单位border-radius:50%在安卓手机中画圆变形</h2>
+    <p class="post-date">09/29/2019</p>
 </div>
 <main class="app-body flex-box">
     <article class="post-article">
         <section class="markdown-content">
-            <h2 id="react生命周期-v16-4"><a href="#react生命周期-v16-4" class="headerlink" title="react生命周期(v16.4)"></a>react生命周期(v16.4)</h2><ul>
-<li>组件的挂载(Mounting)阶段<ul>
-<li>constructor()用来做一些组件的初始化工作，如定义this.state的初始内容。</li>
-<li>getDerivedStateFromProps()</li>
-<li>render()<br>render是纯函数,不能在里面执行this.setState，会有改变组件状态的副作用。</li>
-<li>componentDidMount()<br>———–componentWillMount()即将过时</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>组件的更新(update)阶段</p>
-<ul>
-<li>父组件重新render致更新<ul>
-<li>父组件重新render导致的<strong>重传</strong>props，无论props有没有变化这可以通过shouldComponentUpdate(nextProps,nextState)优化。</li>
-<li>props变化。</li>
-</ul>
-</li>
-<li>组件本身调用setState致更新</li>
-</ul>
-<p>updation分为：</p>
-<ul>
-<li>getDerivedStateFromProps()</li>
-<li>shouldComponentUpdate(nextProps, nextState)<br>返回false则当前组件更新停止，可用于优化组件性能。</li>
-<li>render()</li>
-<li>getSnapshotBeforeUpdate()</li>
-<li>componentDidUpdate(prevProps, prevState)<br>———–componentWillUpdate(nextProps, nextState)、componentWillReceiveProps()即将过时</li>
-</ul>
-</li>
-<li><p>卸载(Unmounting)阶段</p>
-<ul>
-<li>componentWillUnmount()<br>在组件被卸载前调用，可以在这里执行一些清理工作，比如清除组件中使用的定时器，清除componentDidMount中手动创建的DOM元素等，以避免引起内存泄漏。</li>
-</ul>
-</li>
-<li><p>错误处理<br> 当渲染过程，生命周期，或子组件的构造函数中抛出错误时，会调用如下方法：</p>
-<ul>
-<li>static getDerivedStateFromError()</li>
-<li>componentDidCatch()</li>
-</ul>
-</li>
-</ul>
-<p><img src="HTML5-WebWorker/react.png" alt="react生命周期"></p>
+            <p>使用border-radius:50%,或者border-radius的值与宽高相等，都可实现一个完美的圆形，但是在不同的安卓手机中，会有不同程度的变形（有的扁圆，有的大，有的小）；当使用px做为宽高的单位，border-radius:50%画出来的圆是不会变形的；但使用rem时，rem在换算为px时，会是一个带小数点的值，安卓对小于1px的做了处理（不同浏览器对小于1px的处理方式不同，有的采用四舍五入，有的大于某个值展示1px否则就舍去），从而导致圆角不圆；在ios下就没有这个问题。</p>
+<h2 id="推荐的方法"><a href="#推荐的方法" class="headerlink" title="推荐的方法"></a>推荐的方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i&#123;</span><br><span class="line">     display: inline-block;</span><br><span class="line">     width: .16rem;</span><br><span class="line">     height: .16rem;</span><br><span class="line">     background-color: #D0021B;</span><br><span class="line">     border-radius: 50%;</span><br><span class="line">     transform: scale(.5);</span><br><span class="line">     transform-origin: 0% center;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>先把width，height的值放大一倍，然后用transform scale(.5)缩小一倍，接着用transform-origin调整下圆的位置就大功告成了！</p>
 
         </section>
         </br>
@@ -122,20 +85,13 @@
         
     <div class="nav-container">
         
-            <a class="nav-right" href="/2019/08/03/HTML执行顺序/">
+            <a class="nav-right" href="/2019/08/14/HTML5-WebWorker/">
                 
-                    HTML执行顺序（包含浏览器线程基础）
+                    HTML5-WebWorker
                 
                 <span class="nav-arrow"> →</span>
             </a>
         
-        
-            <a class="nav-left" href="/2019/08/05/单点登录（SSO）/">
-                <span class="nav-arrow">← </span>
-                
-                    单点登录（SSO）
-                
-            </a>
         
     </div>
 
@@ -146,7 +102,7 @@
     <div class="toc-main">
         <strong class="toc-title">Catalog</strong>
         
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#react生命周期-v16-4"><span class="toc-nav-text">react生命周期(v16.4)</span></a></li></ol>
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#推荐的方法"><span class="toc-nav-text">推荐的方法</span></a></li></ol>
         
     </div>
 </aside>

@@ -70,7 +70,32 @@
 <main class="app-body flex-box">
     <article class="post-article">
         <section class="markdown-content">
-            
+            <p>多个应用系统只需登录一次，可以访问其他相互信任的应用系统。</p>
+<h2 id="不同域下的单点登录（CAS流程）"><a href="#不同域下的单点登录（CAS流程）" class="headerlink" title="不同域下的单点登录（CAS流程）"></a>不同域下的单点登录（CAS流程）</h2><ul>
+<li><p>用户访问app，app是需要登录的，用户现在还没有登录。</p>
+</li>
+<li><p>跳转到CAS Server，即SSO登录系统，弹出登录页。</p>
+</li>
+<li><p>用户输入信息登录，将登陆状态写入SSO的Session，浏览器中写入SSO域下的Cookie。</p>
+</li>
+<li><p>SSO系统登录完成后会生成一个ST（Servies Ticket），然后跳转到app，同时ST作为参数一并传过去。</p>
+</li>
+<li><p>app拿到ST后，从后台向SSO发送请求，验证ST是否有效。</p>
+</li>
+<li><p>验证通过后，app系统将登陆状态写入Session，并设置app域下的Cookie。<br>至此，单点登录完成。</p>
+</li>
+<li><p>用户访问app2系统，app2没有登录，跳转至SSO。</p>
+</li>
+<li><p>SSO已登录，无需重新认证。</p>
+</li>
+<li><p>SSO生成ST，并随着跳转至app2将ST作为参数传递出去。</p>
+</li>
+<li><p>app2拿到ST，后台访问SSO，验证ST是否有效。</p>
+</li>
+<li><p>验证成功后，app2将登陆状态写入Session，并在app2域下写入Cookie。</p>
+</li>
+</ul>
+
         </section>
         </br>
         <div class="article-footer">
@@ -105,7 +130,7 @@
     <div class="toc-main">
         <strong class="toc-title">Catalog</strong>
         
-            <ol class="nav">none</ol>
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#不同域下的单点登录（CAS流程）"><span class="toc-nav-text">不同域下的单点登录（CAS流程）</span></a></li></ol>
         
     </div>
 </aside>
